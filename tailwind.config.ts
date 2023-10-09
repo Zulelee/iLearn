@@ -18,6 +18,10 @@ const config: Config = {
       "purple" : "#925FE2",
       "black" : "#1C1D21",
       "white": "#ffffff",
+      "grey": "#E0E0E0",
+      "greySilver": "#C0C0C0",
+      "darkSilver": "#383838",
+      
     }
   },
   plugins: [],
