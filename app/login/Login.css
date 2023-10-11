@@ -1,0 +1,13 @@
+/* styles.css */
+.rounded-custom {
+    border-radius: 46% 54% 100% 0% / 19% 54% 46% 81% ;
+    width: 350px; height: 350px;
+}
+.rounded-custom1 {
+    border-radius: 100% 0% 29% 71% / 29% 100% 0% 71%  ;
+    width: 350px; height: 350px;
+}
+.rounded-custom2 {
+    border-radius: 46% 54% 100% 0% / 19% 54% 46% 81% ;
+    width: 350px; height: 350px;
+}

@@ -1,9 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import blobimage from "public/Untitled design (1).png"
+import "app/login/Login.css"
 
 const page = () => {
   return (
-    <div className="flex bg-white rounded-2xl shadow-2xl w-full ">
+    <div className=" flex bg-white rounded-2xl shadow-2xl w-full ">
       <div className="bg-black text-white py-60 px-32 w-2/5 ">
         <h6 className="text-5xl mb-6">
           <b>Login</b>
@@ -55,7 +58,12 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="bg-purple text-white p-2  w-3/5 ">Right Side</div>
+      <div className="bg-purple text-white  w-3/5 ">
+        <div>
+        <Image src = {blobimage} alt="blob"  className="rounded-custom1 mr-0"/>
+        <Image src = {blobimage} alt="blob"  className="rounded-custom mt-32"/>
+        </div>
+      </div>
     </div>
   );
 };
