@@ -3,11 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import blobimage from "public/Untitled design (1).png"
 import "app/login/Login.css"
+import blob2 from "public/blob.jpg"
 
 const page = () => {
   return (
-    <div className=" flex bg-white rounded-2xl shadow-2xl w-full ">
-      <div className="bg-black text-white py-60 px-32 w-2/5 ">
+    <div className=" flex bg-white rounded-2xl shadow-2xl w-full h-auto">
+      <div className="bg-black text-white pt-60 px-32 w-2/5 ">
         <h6 className="text-5xl mb-6">
           <b>Login</b>
         </h6>
@@ -40,7 +41,7 @@ const page = () => {
           >
             Login
           </Link>
-          <div className=" flex mt-48 items-center">
+          <div className=" flex mt-36 items-center">
             <div>
               <Link rel="stylesheet" href="" className="text-xs text-grey">
                 Don't have and account?
@@ -48,20 +49,23 @@ const page = () => {
             </div>
             <div>
               <Link
-                rel="stylesheet"
-                href=""
-                className="border-2 ml-24 px-2 py-2 bg-darkSilver border-darkSilver w-16 text-xs text-grey rounded-lg inline-block hover:bg-black"
-              >
+                rel="stylesheet" href="" className="border-2 ml-24 px-2 bg-darkSilver border-darkSilver w-16 text-xs text-grey rounded-lg inline-block hover:bg-black">
                 Signup
               </Link>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-purple text-white  w-3/5 ">
-        <div>
-        <Image src = {blobimage} alt="blob"  className="rounded-custom1 mr-0"/>
-        <Image src = {blobimage} alt="blob"  className="rounded-custom mt-32"/>
+      <div className="bg-purple text-white  w-3/5">
+        <div className="z-0 max-h-fit">
+          <Image src = {blobimage} alt="blob"  className="rounded-custom1 float-right"/>
+          <Image src = {blobimage} alt="blob"  className="rounded-custom float-left mt-80"/>
+          <Image src = {blobimage} alt="blob"  className="rounded-custom3 float-right mt-24"/>
+        </div>
+        <div className="z-10 text-left  mt-56 w-auto h-auto">
+        <label className="text-6xl "><b>Welcome to</b></label><br/> 
+        <label className="text-5xl">ILearn</label><br/>
+        <label className="text-sm">Login to access your account</label>
         </div>
       </div>
     </div>

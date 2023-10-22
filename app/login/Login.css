@@ -7,7 +7,8 @@
     border-radius: 100% 0% 29% 71% / 29% 100% 0% 71%  ;
     width: 350px; height: 350px;
 }
-.rounded-custom2 {
-    border-radius: 46% 54% 100% 0% / 19% 54% 46% 81% ;
-    width: 350px; height: 350px;
+
+.rounded-custom3 {
+    border-radius: 71% 50% 0% 120% / 120% 0% 100% 0% ;
+    width: 750px; height: 483px;
 }
