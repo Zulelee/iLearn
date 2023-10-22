@@ -56,15 +56,15 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="bg-purple text-white  w-3/5">
-        <div className="z-0 max-h-fit">
+      <div className="bg-purple  text-white w-3/5">
+        <div>
           <Image src = {blobimage} alt="blob"  className="rounded-custom1 float-right"/>
           <Image src = {blobimage} alt="blob"  className="rounded-custom float-left mt-80"/>
           <Image src = {blobimage} alt="blob"  className="rounded-custom3 float-right mt-24"/>
         </div>
-        <div className="z-10 text-left  mt-56 w-auto h-auto">
+        <div className=" absolute ml-80 mt-56 ">
         <label className="text-6xl "><b>Welcome to</b></label><br/> 
-        <label className="text-5xl">ILearn</label><br/>
+        <label className="text-5xl">ILearn</label><br />
         <label className="text-sm">Login to access your account</label>
         </div>
       </div>
