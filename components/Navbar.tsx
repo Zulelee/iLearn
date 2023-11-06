@@ -1,6 +1,6 @@
 import React from "react";
 
-const navbar = () => {
+const Navbar = () => {
   return (
     <div className="bg-purple h-16 flex items-center place-content-between">
       <span className="text-white text-3xl mx-5">iLearn</span>
@@ -12,4 +12,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;
