@@ -21,7 +21,7 @@ const config: Config = {
       "grey": "#E0E0E0",
       "greySilver": "#C0C0C0",
       "darkSilver": "#383838",
-      
+      "lightblue": "#6A9BC3",
     }
   },
   daisyui: {

@@ -40,26 +40,37 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">iLearn</a>
+        <a className="btn btn-ghost normal-case text-3xl">iLearn</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/" className="text-lg font-bold">
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="/features">Features</Link>
+            <Link href="/features" className="text-lg font-bold">
+              Features
+            </Link>
           </li>
           <li>
-            <Link href="/about">About Us</Link>
+            <Link href="/about" className="text-lg font-bold">
+              About Us
+            </Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact" className="text-lg font-bold">
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link href="/login" className="btn btn-secondary">
+        <Link
+          href="/login"
+          className="btn btn-secondary font-bold rounded-full hidden lg:inline-flex md:inline-flex"
+        >
           Try Now!
         </Link>
       </div>
