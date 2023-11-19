@@ -47,7 +47,7 @@ const Benefits = () => {
     <>
       <div className="bg-primary py-16 px-6" id="benefits">
         <h1 className="text-center text-4xl font-bold">Key Benefits</h1>
-        <div className="divider"></div>
+        <div className="divider divider-secondary"></div>
         <div className="flex flex-1 flex-row flex-wrap justify-center mt-10">
           <FloatingDiv
             flipfunction={handleFlip1}
