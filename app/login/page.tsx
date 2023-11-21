@@ -1,13 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import blobimage from "public/Untitled design (1).png"
-import "app/login/Login.css"
-import blob2 from "public/blob.jpg"
+import "app/login/Login.css";
+import login_div from "public/login-div.png";
 
 const page = () => {
   return (
-    <div className=" flex bg-white rounded-2xl shadow-2xl w-full h-auto">
+    <div className=" flex h-screen">
       <div className="bg-black text-white pt-60 px-32 w-2/5 ">
         <h6 className="text-5xl mb-6">
           <b>Login</b>
@@ -49,23 +48,35 @@ const page = () => {
             </div>
             <div>
               <Link
-                rel="stylesheet" href="" className="border-2 ml-24 px-2 bg-darkSilver border-darkSilver w-16 text-xs text-grey rounded-lg inline-block hover:bg-black">
+                rel="stylesheet"
+                href=""
+                className="border-2 ml-24 px-2 bg-darkSilver border-darkSilver w-16 text-xs text-grey rounded-lg inline-block hover:bg-black"
+              >
                 Signup
               </Link>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-purple  text-white w-3/5">
-        <div>
+      <div
+        className="bg-purple text-white w-3/5"
+        style={{
+          backgroundImage: 'url("blob.svg")',
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* <div>
           <Image src = {blobimage} alt="blob"  className="rounded-custom1 float-right"/>
-          <Image src = {blobimage} alt="blob"  className="rounded-custom float-left mt-80"/>
-          <Image src = {blobimage} alt="blob"  className="rounded-custom3 float-right mt-24"/>
-        </div>
+        </div> */}
         <div className=" absolute ml-80 mt-56 ">
-        <label className="text-6xl "><b>Welcome to</b></label><br/> 
-        <label className="text-5xl">ILearn</label><br />
-        <label className="text-sm">Login to access your account</label>
+          <label className="text-6xl ">
+            <b>Welcome to</b>
+          </label>
+          <br />
+          <label className="text-5xl">ILearn</label>
+          <br />
+          <label className="text-sm">Login to access your account</label>
         </div>
       </div>
     </div>
