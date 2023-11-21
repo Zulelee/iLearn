@@ -7,77 +7,69 @@ import { Navbar } from "@/components";
 const page = () => {
   return (
     <>
-      <div className="flex flex-wrap-reverse h-screen">
-        <div className="bg-black text-white py-60 px-32 w-screen md:w-2/5">
-          <h6 className="text-5xl mb-6">
-            <b>Login</b>
-          </h6>
-          <div>
-            <p className="text-sm text-grey">Enter your account details</p>
-            <div className="flex flex-col w-96 my-12">
-              <input
-                className="bg-black  mb-2"
-                type="email"
-                name="email"
-                placeholder="Email"
-              />
-              <hr className="w-96 border-grey mb-2  " />
-              <input
-                className="bg-black  my-3 mb-2"
-                type="password"
-                name="password"
-                placeholder="Password"
-              />
-              <hr className="w-96 border-grey mb-8  " />
-              <Link rel="stylesheet" href="" className="text-xs  text-grey">
-                Forgot Password?
-              </Link>
-            </div>
-
-            <Link
-              rel="stylesheet"
-              href=""
-              className="border-purple border-2 px-44 bg-purple mt-10 w-96 text-sm text-grey rounded-lg py-2 inline-block hover:bg-black"
-            >
-              Login
-            </Link>
-            <div className=" flex mt-36 items-center">
-              <div>
-                <Link rel="stylesheet" href="" className="text-xs text-grey">
-                  Don't have and account?
-                </Link>
-              </div>
-              <div>
-                <Link
-                  rel="stylesheet"
-                  href=""
-                  className="border-2 ml-24 px-2 bg-darkSilver border-darkSilver w-16 text-xs text-grey rounded-lg inline-block hover:bg-black"
-                >
-                  Signup
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-row-reverse min-h-screen bg-secondary">
         <div
-          className="bg-purple text-white hidden md:block"
+          className=" bg-purple text-white hidden h-screen lg:w-3/5 lg:block"
           style={{
             backgroundImage: 'url("blob.svg")',
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
         >
-          {/* <div>
-          <Image src = {blobimage} alt="blob"  className="rounded-custom1 float-right"/>
-        </div> */}
-          <div className=" absolute ml-80 mt-56 ">
-            <label className="text-6xl ">
+          <div className="flex flex-col items-center h-screen">
+            <label className="text-6xl pt-32">
               <b>Welcome to</b>
             </label>
-            <br />
-            <label className="text-5xl">ILearn</label>
-            <br />
-            <label className="text-sm">Login to access your account</label>
+            <label className="text-5xl pt-3">ILearn</label>
+            <label className="text-xl pt-10">
+              Login to access your account
+            </label>
+          </div>
+        </div>
+        <div className="p-5 bg-black text-white w-screen h-screen lg:w-2/5 flex justify-center items-center">
+          <div className="p-10">
+            <h6 className="text-3xl font-bold md:text-5xl">Login</h6>
+            <p className="text-sm text-accent pt-5 md:text-xl">
+              Enter your account details
+            </p>
+            <div className="flex flex-col flex-shrink my-12">
+              <input
+                className="bg-black  mb-2"
+                type="email"
+                name="email"
+                placeholder="Email"
+              />
+              <hr className="w-96 border-accent mb-2  " />
+              <input
+                className="bg-black  my-3 mb-2"
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+              <hr className="w-96 border-accent mb-8  " />
+              <Link rel="stylesheet" href="" className="text-xs  text-accent">
+                Forgot Password?
+              </Link>
+            </div>
+            <Link
+              rel="stylesheet"
+              href=""
+              className="border-purple border-2 px-44 bg-purple mt-10 w-96 text-sm text-white rounded-lg py-2 inline-block hover:bg-black"
+            >
+              Login
+            </Link>
+            <div className="pt-10">
+              <Link rel="stylesheet" href="" className="text-xs text-accent">
+                Don't have and account?
+              </Link>
+              <Link
+                rel="stylesheet"
+                href=""
+                className="border-2 px-2 ml-5 bg-darkSilver border-darkSilver w-16 text-xs text-accent rounded-lg inline-block hover:bg-black"
+              >
+                Signup
+              </Link>
+            </div>
           </div>
         </div>
       </div>
