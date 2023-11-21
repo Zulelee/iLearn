@@ -6,18 +6,26 @@ const page = () => {
     <>
       <div className="flex min-h-screen bg-secondary">
         <div
-          className="bg-purple text-white hidden h-screen lg:w-3/5 lg:block"
+          className=" bg-purple text-white hidden h-screen lg:w-3/5 lg:block"
           style={{
             backgroundImage: 'url("blob.svg")',
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
-        ></div>
+        >
+          <div className="flex flex-col items-center h-screen">
+            <label className="text-6xl pt-32">
+              <b>Welcome to</b>
+            </label>
+            <label className="text-5xl pt-3">ILearn</label>
+            <label className="text-xl pt-10">Sign up now!</label>
+          </div>
+        </div>
         <div className="p-5 bg-black text-white w-screen h-screen lg:w-2/5 flex justify-center items-center">
           <div className="p-10">
-            <h6 className="text-3xl font-bold md:text-5xl">Login</h6>
+            <h6 className="text-3xl font-bold md:text-5xl">Signup</h6>
             <p className="text-sm text-accent pt-5 md:text-xl">
-              Enter your account details
+              Enter your details
             </p>
             <div className="flex flex-col flex-shrink my-12">
               <input
