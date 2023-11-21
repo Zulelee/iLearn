@@ -18,7 +18,7 @@ const page = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <Fade left>
+            <Fade top>
               <h1 className="mb-5 text-4xl lg:text-7xl font-extrabold">
                 Features
               </h1>
