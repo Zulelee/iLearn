@@ -3,6 +3,7 @@ import React from "react";
 import { Navbar, Footer, FeatureBox } from "@/components";
 import "./page.css";
 import Fade from "react-reveal/Fade";
+import { AnimatePresence, motion } from "framer-motion";
 
 const page = () => {
   return (

@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "framer-motion";
 import "./globals.css";
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";

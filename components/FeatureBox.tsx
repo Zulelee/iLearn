@@ -3,7 +3,7 @@ import React from "react";
 interface BoxDetails {
   title: string;
   paragraph: string;
-  svg: string;
+  svg?: string;
 }
 
 const FeatureBox = (details: BoxDetails) => {
