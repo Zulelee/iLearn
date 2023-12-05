@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
-
+import Image from "next/image";
+import signup_image from "public/V-image.png";
 const page = () => {
   return (
     <>
@@ -17,8 +18,14 @@ const page = () => {
             <label className="text-6xl pt-32">
               <b>Welcome to</b>
             </label>
-            <label className="text-5xl pt-3">ILearn</label>
+            <label className="text-5xl pt-3">iLearn</label>
             <label className="text-xl pt-10">Sign up now!</label>
+            <Image
+              src= {signup_image}
+              width={650}
+              height={650}
+              alt="Picture of the author"
+            />
           </div>
         </div>
         <div className="p-5 bg-black text-white w-screen h-screen lg:w-2/5 flex justify-center items-center">
@@ -29,19 +36,37 @@ const page = () => {
             </p>
             <div className="flex flex-col flex-shrink my-12">
               <input
+                className="bg-black mb-2"
+                type="username"
+                name="username"
+                placeholder="Username"
+              />
+
+              <hr className="w-full border-accent mb-6  " />
+              <input
                 className="bg-black  mb-2"
                 type="email"
                 name="email"
                 placeholder="Email"
               />
-              <hr className="w-96 border-accent mb-2  " />
+              <hr className="w-96 border-accent mb-6  " />
+
               <input
-                className="bg-black  my-3 mb-2"
+                className="bg-black mb-2"
                 type="password"
                 name="password"
                 placeholder="Password"
               />
-              <hr className="w-96 border-accent mb-8  " />
+              <hr className="w-96 border-accent mb-6" />
+
+              <select className="select w-96 bg-transparent mb-2">
+                <option className="bg-black" disabled selected>
+                  Profession
+                </option>
+                <option className="bg-black">Teacher</option>
+                <option className="bg-black">Student</option>
+              </select>
+              <hr className="w-96 border-accent mb-6" />
               <Link rel="stylesheet" href="" className="text-xs  text-accent">
                 Forgot Password?
               </Link>

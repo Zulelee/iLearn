@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import login_div from "public/login-div.png";
+import signup_image from "public/V-image.png";
 import { Navbar } from "@/components";
 
 const page = () => {
@@ -24,6 +24,12 @@ const page = () => {
             <label className="text-xl pt-10">
               Login to access your account
             </label>
+            <Image
+              src= {signup_image}
+              width={650}
+              height={650}
+              alt="Picture of the author"
+            />
           </div>
         </div>
         <div className="p-5 bg-black text-white w-screen h-screen lg:w-2/5 flex justify-center items-center">
