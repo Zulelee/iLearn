@@ -50,7 +50,7 @@ const page = () => {
 
       <div className="bg-primary px-16 py-28">
         <motion.div
-          className="flex justify-center"
+          className="flex justify-center flex-wrap"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{
@@ -70,27 +70,6 @@ const page = () => {
           <FeatureBox
             title="Bridging the Learning Gap"
             paragraph="iLearn is more than just a repository of educational materials. We bridge the gap between traditional classroom settings and independent learning by providing personalized homework help through our advanced AI Chatbot, available 24/7. Our platform adapts to each student's unique learning style and pace, ensuring an engaging and effective learning experience."
-          ></FeatureBox>
-        </motion.div>
-      </div>
-      <div className="bg-secondary px-16 py-28">
-        <motion.div
-          className="flex justify-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            ease: "linear",
-            duration: 2,
-            x: { duration: 1 },
-          }}
-        >
-          <FeatureBox
-            title="Supporting Educators"
-            paragraph="iLearn isn't just for students; we support educators in their teaching journey. Our platform generates automated course outlines, roadmaps, and objectives, empowering teachers to deliver structured and organized classes. This not only saves time but also ensures that students receive a comprehensive education."
-          ></FeatureBox>
-          <FeatureBox
-            title="User-Friendly Design"
-            paragraph="Designed with simplicity in mind, iLearn boasts a user-friendly interface, allowing students to effortlessly navigate and find the resources they need. The incorporation of AI technology further enhances the learning experience, creating a personalized journey for each student."
           ></FeatureBox>
         </motion.div>
       </div>

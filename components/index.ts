@@ -4,6 +4,7 @@ import Benefits from "./Benefits";
 import Step from "./Step";
 import Footer from "./Footer";
 import FeatureBox from "./FeatureBox";
+import ContactForm from "./ContactForm";
 
 
 export{
@@ -12,5 +13,6 @@ export{
     Benefits,
     Step,
     Footer,
-    FeatureBox
+    FeatureBox,
+    ContactForm
 }

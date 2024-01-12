@@ -18,7 +18,8 @@ const FeatureBox = (details: BoxDetails) => {
       >
         <div className="flex flex-col ">
           <div className="flex items-center justify-center">
-            <svg
+            <div>
+              {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -31,8 +32,25 @@ const FeatureBox = (details: BoxDetails) => {
                 strokeLinejoin="round"
                 d={details.svg}
               />
-            </svg>
-            <h1 className="text-lg">{details.title}</h1>
+            </svg> */}
+              {details.svg && ( // Check if details.svg is present
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-10 h-10 m-3"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d={details.svg}
+                  />
+                </svg>
+              )}
+            </div>
+            <h1 className="text-lg font-semibold">{details.title}</h1>
           </div>
 
           <p className="font-extralight text-sm text-left">

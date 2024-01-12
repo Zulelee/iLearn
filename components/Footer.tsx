@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
       </nav>
       <aside>
-        <p>Copyright © 2023 - All right reserved by iLearn Team</p>
+        <p>Copyright © 2023 - All rights reserved by iLearn Team</p>
       </aside>
     </footer>
   );

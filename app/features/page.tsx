@@ -40,7 +40,7 @@ const page = () => {
                 studies. It enriches understanding and analytical skills,
                 providing a dynamic and interactive learning experience.
               </p>
-              <div className="flex justify-center flex-wrap">
+              <div className="flex justify-center">
                 <FeatureBox
                   title="MCQ Generation"
                   paragraph="Unlock the power of question diversity. Easily create a
