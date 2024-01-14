@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, Suspense, useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +7,9 @@ const ContactForm = () => {
     email: "",
     question: "",
   });
+
+  const [loadingState, setLoadingState] = useState(false);
+  const [messageDisplay, setMessageDisplay] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,6 +22,8 @@ const ContactForm = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoadingState(true); // Set loading state to true while waiting for API response
+
       const response = await fetch(
         "https://formsubmit.co/theteamilearn@gmail.com",
         {
@@ -33,16 +38,22 @@ const ContactForm = () => {
       if (response.ok) {
         console.log("Form data sent successfully!");
         // Optionally, you can reset the form data state here
+        setMessageDisplay(true);
         setFormData({
           fullName: "",
           email: "",
           question: "",
         });
+        setTimeout(() => {
+          setMessageDisplay(false);
+        }, 3000);
       } else {
         console.error("Failed to send form data");
       }
     } catch (error) {
       console.error("An error occurred while sending form data:", error);
+    } finally {
+      setLoadingState(false); // Reset loading state after API response
     }
   };
 
@@ -88,10 +99,19 @@ const ContactForm = () => {
                     className="btn btn-primary my-3 text-white font-bold"
                     type="submit"
                   >
-                    Send
+                    {loadingState ? (
+                      <span className="loading loading-spinner loading-xs"></span>
+                    ) : (
+                      "Send"
+                    )}
                   </button>
                 </div>
               </form>
+              {messageDisplay && (
+                <div className="text-green-500 font-bold text-center mt-4">
+                  Message sent successfully!
+                </div>
+              )}
             </div>
           </div>
         </div>
