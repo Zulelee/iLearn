@@ -29,5 +29,17 @@ export{
     FeatureBox,
     ContactForm,
     Signup,
+    Sidebar,
+    StudentMain,
+    CasestudyGeneration,
+    ChapterObjectivesGenerator,
+    CheckPlagarism,
+    CourseOutlineGenerator,
+    GrammarChecker,
+    McqGeneration,
+    SaqGeneration,
+    SearchTb,
+    TeacherMain,
+    TeacherSidebar,
     Login
 }
