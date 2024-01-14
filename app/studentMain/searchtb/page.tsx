@@ -1,11 +1,11 @@
+import { Sidebar, SearchTb } from "@/components";
 import React from "react";
-import { TeacherSidebar, TeacherMain } from "@/components";
 
 const page = () => {
   return (
     <>
       <div className="bg-black">
-        <TeacherSidebar childComponent={<TeacherMain />}></TeacherSidebar>
+        <Sidebar childComponent={<SearchTb />}></Sidebar>
       </div>
     </>
   );

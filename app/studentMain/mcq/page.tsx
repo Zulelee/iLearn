@@ -1,11 +1,10 @@
+import { McqGeneration, Sidebar } from "@/components";
 import React from "react";
-import { TeacherSidebar, TeacherMain } from "@/components";
-
 const page = () => {
   return (
     <>
       <div className="bg-black">
-        <TeacherSidebar childComponent={<TeacherMain />}></TeacherSidebar>
+        <Sidebar childComponent={<McqGeneration />}></Sidebar>
       </div>
     </>
   );
