@@ -70,7 +70,7 @@ const page = () => {
               </Link>
               <Link
                 rel="stylesheet"
-                href=""
+                href="/signup"
                 className="border-2 px-2 ml-5 bg-darkSilver border-darkSilver w-16 text-xs text-accent rounded-lg inline-block hover:bg-black"
               >
                 Signup

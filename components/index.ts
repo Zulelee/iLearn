@@ -17,6 +17,8 @@ import TeacherSidebar from "./TeacherSidebar";
 import TeacherMain from "./TeacherMain";
 import CourseOutlineGenerator from "./CourseOutlineGenerator";
 import ChapterObjectivesGenerator from "./ChapterObjectivesGenerator";
+import Signup from "./Signup";
+
 export{
     Navbar, 
     Hero,
@@ -36,5 +38,6 @@ export{
     TeacherSidebar, 
     TeacherMain,
     CourseOutlineGenerator,
-    ChapterObjectivesGenerator
+    ChapterObjectivesGenerator,
+    Signup
 }
