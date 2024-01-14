@@ -5,7 +5,7 @@ import Step from "./Step";
 import Footer from "./Footer";
 import FeatureBox from "./FeatureBox";
 import ContactForm from "./ContactForm";
-
+import Signup from "./Signup";
 
 export{
     Navbar, 
@@ -14,5 +14,6 @@ export{
     Step,
     Footer,
     FeatureBox,
-    ContactForm
+    ContactForm,
+    Signup
 }
