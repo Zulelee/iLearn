@@ -3,20 +3,20 @@ from pydantic import BaseModel
 
 import pymongo
 
-#create mongo client
-con_str ="mongodb://root:a123@ac-cpokgyu-shard-00-00.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-01.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-02.nm9iyx9.mongodb.net:27017/?ssl=true&replicaSet=atlas-138oma-shard-0&authSource=admin&retryWrites=true&w=majority"
+# #create mongo client
+# con_str ="mongodb://root:a123@ac-cpokgyu-shard-00-00.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-01.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-02.nm9iyx9.mongodb.net:27017/?ssl=true&replicaSet=atlas-138oma-shard-0&authSource=admin&retryWrites=true&w=majority"
 
-try:
-    client = pymongo.MongoClient(con_str)
-except Exception:
-    print("ERROR:" + Exception)
+# try:
+#     client = pymongo.MongoClient(con_str)
+# except Exception:
+#     print("ERROR:" + Exception)
 
-# Creating db
-mydb = client["Ilearn"]
+# # Creating db
+# mydb = client["Ilearn"]
 
-# # create a Collection-Table 
-User_collection = mydb["User"]
-record = User_collection.find_one()
+# # # create a Collection-Table 
+# User_collection = mydb["User"]
+# record = User_collection.find_one()
 # #Insert rows/documents into collection
 # mydoc={
 #     "username": "hamza",
@@ -43,7 +43,8 @@ except Exception:
 # Creating db
 mydb = client["Ilearn"]
 
-
+# create a Collection-Table 
+User_collection = mydb["User"]
 
 class UserSignup(BaseModel):
     username: str
@@ -51,7 +52,9 @@ class UserSignup(BaseModel):
     password: str
     profession: str
 
-
+class UserLogin(BaseModel):
+    email: str
+    password: str
 
 @app.get("/api/healthchecker")
 def healthchecker():
@@ -61,20 +64,6 @@ def healthchecker():
 @app.post("/api/signup")
 def signup(user_data : UserSignup):
 
-
-    #create mongo client
-    con_str ="mongodb://root:a123@ac-cpokgyu-shard-00-00.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-01.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-02.nm9iyx9.mongodb.net:27017/?ssl=true&replicaSet=atlas-138oma-shard-0&authSource=admin&retryWrites=true&w=majority"
-
-    try:
-        client = pymongo.MongoClient(con_str)
-    except Exception:
-        print("ERROR:" + Exception)
-
-    # Creating db
-    mydb = client["Ilearn"]
-
-    # create a Collection-Table 
-    User_collection = mydb["User"]
     # Insert rows/documents into collection
     mydoc = {
             "username": user_data.username,
@@ -87,18 +76,17 @@ def signup(user_data : UserSignup):
     return {"status": "signup successful"}
 
 @app.post("/api/login")
-def login(user_data : UserSignup):
-
+def login(user_data : UserLogin):
 
     # create a Collection-Table 
     User_collection = mydb["User"]
-    # Insert rows/documents into collection
-    mydoc = {
-            "username": user_data.username,
-            "email" : user_data.email,
-            "password" : user_data.password,
-            "profession" : user_data.profession,
-            }
-    User_collection.insert_one(mydoc)
+        
+    user = User_collection.find_one({"email": user_data.email})
 
-    return {"status": "Login successful"}
+    if user and user["password"] == user_data.password:
+        user_role = user.get("profession")
+        return {"status": "true", "userRole": user_role}
+    else:
+        return {"status": "Login failed"}
+        
+    return {"$)$"}

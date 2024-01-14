@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import FeatureBox from "./FeatureBox";
 import ContactForm from "./ContactForm";
 import Signup from "./Signup";
+import Login from "./Login";
 
 export{
     Navbar, 
@@ -15,5 +16,6 @@ export{
     Footer,
     FeatureBox,
     ContactForm,
-    Signup
+    Signup,
+    Login
 }
