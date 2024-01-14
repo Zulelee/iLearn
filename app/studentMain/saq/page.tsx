@@ -1,11 +1,11 @@
+import { Sidebar, SaqGeneration } from "@/components";
 import React from "react";
-import { TeacherSidebar, TeacherMain } from "@/components";
 
 const page = () => {
   return (
     <>
       <div className="bg-black">
-        <TeacherSidebar childComponent={<TeacherMain />}></TeacherSidebar>
+        <Sidebar childComponent={<SaqGeneration />}></Sidebar>
       </div>
     </>
   );

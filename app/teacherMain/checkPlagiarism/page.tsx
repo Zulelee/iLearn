@@ -1,11 +1,11 @@
+import { TeacherSidebar, CheckPlagarism } from "@/components";
 import React from "react";
-import { TeacherSidebar, TeacherMain } from "@/components";
 
 const page = () => {
   return (
     <>
       <div className="bg-black">
-        <TeacherSidebar childComponent={<TeacherMain />}></TeacherSidebar>
+        <TeacherSidebar childComponent={<CheckPlagarism />}></TeacherSidebar>
       </div>
     </>
   );
