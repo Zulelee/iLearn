@@ -3,6 +3,8 @@ from pydantic import BaseModel
 
 import pymongo
 
+import requests
+
 # #create mongo client
 # con_str ="mongodb://root:a123@ac-cpokgyu-shard-00-00.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-01.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-02.nm9iyx9.mongodb.net:27017/?ssl=true&replicaSet=atlas-138oma-shard-0&authSource=admin&retryWrites=true&w=majority"
 
@@ -45,6 +47,11 @@ mydb = client["Ilearn"]
 
 # create a Collection-Table 
 User_collection = mydb["User"]
+
+
+
+
+
 
 class UserSignup(BaseModel):
     username: str
@@ -90,3 +97,4 @@ def login(user_data : UserLogin):
         return {"status": "Login failed"}
         
     return {"$)$"}
+

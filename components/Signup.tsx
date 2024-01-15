@@ -10,12 +10,24 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [profession, setProfession] = useState("");
+  const [errorMessage, setErrorMessage] = useState(""); // New state for error message 
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
+    if (!username || !email || !password) {
+      setErrorMessage("Please enter all details.");
+      return; // Stop execution if any field is missing
+    }
+    if (!email.endsWith("@gmail.com")) {
+      setErrorMessage("Please provide a valid Gmail address.");
+      return; // Stop execution if the email domain is not @gmail.com
+    }
+    if (!(profession === "Student" || profession === "Teacher")) {
+      setErrorMessage("Please select a valid profession (Student or Teacher).");
+      return; // Stop execution if the profession is not valid
+    }
     // Create an object with form data
-    
     const formData = {
       username,
       email,
@@ -33,10 +45,10 @@ const Signup = () => {
       });
 
       if (response.ok) {
-        console.log("Form data sent successfully!");
-      } else {
-        console.error("Failed to send form data");
+        setErrorMessage("Signup successfully");
       }
+      
+        
     } catch (error) {
       console.error("An error occurred while sending form data:", error);
     }
@@ -80,6 +92,7 @@ const Signup = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Username"
+                required  
               />
 
               <hr className="w-full border-accent mb-6  " />
@@ -90,6 +103,7 @@ const Signup = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
+                required  
               />
               <hr className="w-96 border-accent mb-6  " />
 
@@ -100,6 +114,7 @@ const Signup = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required  
               />
               <hr className="w-96 border-accent mb-6" />
 
@@ -107,12 +122,12 @@ const Signup = () => {
                 className="select w-96 bg-transparent mb-2"
                 value={profession}
                 onChange={(e) => setProfession(e.target.value)}
+                  
               >
-                <option className="bg-black" disabled selected>
-                  Profession
-                </option>
-                <option className="bg-black">Teacher</option>
+                <option className="bg-black"selected >Profession</option>
                 <option className="bg-black">Student</option>
+                <option className="bg-black">Teacher</option>
+                
               </select>
               <hr className="w-96 border-accent mb-6" />
               <Link rel="stylesheet" href="" className="text-xs  text-accent">
@@ -139,6 +154,7 @@ const Signup = () => {
                 Login
               </Link>
             </div>
+            <div className="border-red-500 text-red-500 mt-4">{errorMessage}</div>
           </div>
         </div>
       </div>

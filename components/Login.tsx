@@ -14,8 +14,9 @@ const login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter(); 
-
+  const [errorMessage, setErrorMessage] = useState(""); // New state for error message  
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
+
     e.preventDefault();
     // Create an object with form data
     
@@ -42,15 +43,11 @@ const login = () => {
             router.push("/studentMain");
           } else if (responseData.userRole === "Teacher") {
             router.push("/teacherMain");
-          } else {
-            console.error("Unknown user role");
-          }
+          } 
         } else {
-          console.error("Login failed");
+          setErrorMessage("Login failed. Please check your credentials.");
         }
-      } else {
-        console.error("Failed to send form data");
-      }
+      } 
     } catch (error) {
       console.error("An error occurred while sending form data:", error);
     }
@@ -131,6 +128,7 @@ const login = () => {
                 Signup
               </Link>
             </div>
+            <div className="border-red-500 text-red-500 mt-4">{errorMessage}</div>
           </div>
         </div>
       </div>
@@ -139,3 +137,7 @@ const login = () => {
 };
 
 export default login;
+function setErrorMessage(arg0: string) {
+  throw new Error("Function not implemented.");
+}
+
