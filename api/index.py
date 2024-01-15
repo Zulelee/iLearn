@@ -5,32 +5,7 @@ import pymongo
 
 import requests
 
-# #create mongo client
-# con_str ="mongodb://root:a123@ac-cpokgyu-shard-00-00.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-01.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-02.nm9iyx9.mongodb.net:27017/?ssl=true&replicaSet=atlas-138oma-shard-0&authSource=admin&retryWrites=true&w=majority"
 
-# try:
-#     client = pymongo.MongoClient(con_str)
-# except Exception:
-#     print("ERROR:" + Exception)
-
-# # Creating db
-# mydb = client["Ilearn"]
-
-# # # create a Collection-Table 
-# User_collection = mydb["User"]
-# record = User_collection.find_one()
-# #Insert rows/documents into collection
-# mydoc={
-#     "username": "hamza",
-#     "email" : "hamza@gmail.com",
-#     "password" : "123",
-#     "professsion" : "student",
-# }
-
-# res = User_collection.insert_one(mydoc)
-
-# print(res.inserted_id)
-# er= client.list_database_names()
 
 app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 
