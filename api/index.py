@@ -24,6 +24,7 @@ mydb = client["Ilearn"]
 # create a Collection-Table 
 User_collection = mydb["User"]
 
+
 class UserSignup(BaseModel):
     username: str
     email: str
