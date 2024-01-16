@@ -1,13 +1,15 @@
 "use client";
 import React, { useState } from "react";
 
-const ChapterObjectivesGenerator = () => {
+const WordLookup = () => {
   const [formData, setFormData] = useState({
     text: "",
   });
 
+  const [Word, setWord] = useState("");
+
   const [loadingState, setLoadingState] = useState(false);
-  const [Objectives, setObjectives] = useState();
+  const [WordDescription, setWordDescription] = useState();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,22 +23,19 @@ const ChapterObjectivesGenerator = () => {
     e.preventDefault();
     try {
       setLoadingState(true); // Set loading state to true while waiting for API response
-
-      const response = await fetch(
-        "http://localhost:3000/api/chapter_objectives",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      setWord(formData.text);
+      const response = await fetch("http://localhost:3000/api/wordlookup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       if (response.ok) {
         console.log("Form data sent successfully!");
         const responseData = await response.json();
-        setObjectives(responseData);
+        setWordDescription(responseData);
         setFormData({
           text: "",
         });
@@ -54,54 +53,50 @@ const ChapterObjectivesGenerator = () => {
     <>
       <div className="p-10 overflow-auto">
         <h1 className="text-center text-3xl lg:text-4xl font-extrabold">
-          Chapter Objectives Generator
+          Word Lookup
         </h1>
         <div className="divider divider-primary"></div>
         <p className="px-10 pt-14 text-justify">
-          Welcome to iLearn's Chapter Objectives Generator - effortlessly turn
-          chapter topics into clear and concise objectives. Ideal for educators
-          and curriculum developers, this tool ensures alignment with
-          educational goals, streamlining your curriculum planning. Elevate your
-          design experience with iLearn's Chapter Objectives Generator –
-          simplifying the process of creating focused and impactful chapter
-          objectives.
+          Welcome to iLearn's Word Lookup - effortlessly discover the meaning
+          and usage of any word. Perfect for students and educators, this tool
+          provides instant insights, enhancing your vocabulary in just a click.
+          Elevate your language learning with iLearn's Word Lookup – where
+          understanding words is made simple and efficient.
         </p>
         <div className="px-10 pt-14">
-          <form
-            name="chapterobjectives"
-            method="POST"
-            onSubmit={handleFormSubmit}
-          >
+          <form name="wordlookup" method="POST" onSubmit={handleFormSubmit}>
             <label htmlFor="text" className="font-bold">
-              Enter chapter name and subtopics
+              Enter Word:
             </label>
             <br />
-            <textarea
+            <input
+              type="text"
+              placeholder="Type here"
               name="text"
-              className="textarea textarea-bordered mt-4 w-full bg-black mb-4"
+              className="input input-bordered w-full max-w-xs mt-4 bg-black mb-4"
               onChange={handleInputChange}
+              value={formData.text}
               required
-            ></textarea>
+            />
             <br />
-            <button className="btn btn-primary w-60 text-white mt-4">
+            <button className="btn btn-primary w-40 text-white mt-4">
               {loadingState ? (
                 <span className="loading loading-spinner loading-xs"></span>
               ) : (
-                "Generate Chapter Objectives"
+                "Search"
               )}
             </button>
           </form>
         </div>
-        {Objectives && (
+        {WordDescription && (
           <div className="px-10 pt-14">
             <div className="mockup-code">
               <pre className="px-10 pt-2 text-xl font-bold text-center uppercase">
-                <code>Chapter Objectives</code>
+                <code>{Word}</code>
               </pre>
-              <div className="divider divider-accent"></div>
               <pre className="px-10 pt-2">
                 <code style={{ whiteSpace: "pre-wrap" }}>
-                  {Objectives.response}
+                  {WordDescription.response}
                 </code>
               </pre>
             </div>
@@ -112,4 +107,4 @@ const ChapterObjectivesGenerator = () => {
   );
 };
 
-export default ChapterObjectivesGenerator;
+export default WordLookup;

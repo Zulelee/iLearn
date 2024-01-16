@@ -82,6 +82,7 @@ const McqGeneration = () => {
               className="textarea textarea-bordered mt-4 w-full bg-black mb-4"
               onChange={handleInputChange}
               value={formData.text}
+              required
             ></textarea>
             <label htmlFor="number" className="font-bold">
               Enter number of MCQs to generate - Min 1 and Max 10
@@ -96,6 +97,7 @@ const McqGeneration = () => {
               className="input input-bordered w-full max-w-xs mt-4 bg-black mb-4"
               onChange={handleInputChange}
               value={formData.number}
+              required
             />
             <br />
             <label htmlFor="answer" className="font-bold">

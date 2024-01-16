@@ -6,12 +6,22 @@ from openai import OpenAI
 import shutil
 import os
 import re
+from dotenv import load_dotenv
+from llama_hub.smart_pdf_loader import SmartPDFLoader
+from llama_index import VectorStoreIndex
+import openai
+from llama_index import download_loader
+
+
+
+# Load environment variables from the .env file
+load_dotenv()
 
 
 app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 
 #create mongo client
-con_str ="mongodb://root:a123@ac-cpokgyu-shard-00-00.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-01.nm9iyx9.mongodb.net:27017,ac-cpokgyu-shard-00-02.nm9iyx9.mongodb.net:27017/?ssl=true&replicaSet=atlas-138oma-shard-0&authSource=admin&retryWrites=true&w=majority"
+con_str =os.environ.get("MONGODB_URL")
 
 try:
     client = pymongo.MongoClient(con_str)
@@ -45,7 +55,7 @@ def pdf_to_text(file_path : str):
     # remember not to put 'content-type': "multipart/form-data" in the header!
     headers = {
         'x-rapidapi-host': "pdf-text-extractor.p.rapidapi.com",
-        'x-rapidapi-key': "RAPIDAPI_KEY" 
+        'x-rapidapi-key': os.environ.get("RAPIDAPI_PDF2TEXT_KEY")
         }
 
     response = requests.post(url, files=files, headers=headers)
@@ -55,9 +65,6 @@ def preprocess_text(input_text):
     # Use a regular expression to remove non-English characters
     english_only_text = re.sub(r'[^a-zA-Z\s]', '', input_text)
     
-    # Optionally, you can convert the text to lowercase if needed
-    # english_only_text = english_only_text.lower()
-
     return english_only_text
 
 @app.post("/api/signup")
@@ -115,7 +122,7 @@ def check_plagiarism(file: UploadFile = File(...)):
 
     headers = {
         "content-type": "application/json",
-        "X-RapidAPI-Key": "RAPIAPI_KEY",
+        "X-RapidAPI-Key": os.environ.get("RAPIDAPI_PLAGIARISM_KEY"),
         "X-RapidAPI-Host": "plagiarism-checker-and-auto-citation-generator-multi-lingual.p.rapidapi.com"
     }
 
@@ -144,7 +151,7 @@ def check_plagiarism(content : dict):
 
     headers = {
         "content-type": "application/json",
-        "X-RapidAPI-Key": "RAPIAPI_KEY",
+        "X-RapidAPI-Key": os.environ.get("RAPIDAPI_PLAGIARISM_KEY"),
         "X-RapidAPI-Host": "plagiarism-checker-and-auto-citation-generator-multi-lingual.p.rapidapi.com"
     }
 
@@ -161,7 +168,7 @@ def check_plagiarism(content : dict):
 @app.post("/api/check_grammar_text")
 def check_grammar(content : dict):
 
-    client = OpenAI(api_key="OPENAI_KEY")
+    client = OpenAI(api_key=os.environ.get("OPENAI_KEY"))
 
     text = content["text"]
     
@@ -180,7 +187,7 @@ def check_grammar(content : dict):
 @app.post("/api/check_grammar_file")
 def check_grammar(file: UploadFile = File(...)):
 
-    client = OpenAI(api_key="OPENAI_KEY")
+    client = OpenAI(api_key=os.environ.get("OPENAI_KEY"))
 
     filename = file.filename
 
@@ -204,10 +211,89 @@ def check_grammar(file: UploadFile = File(...)):
 
     return {"response": response.choices[0].message.content}
 
+@app.post("/api/searchtb")
+def searchtb(file: UploadFile = File(...), text: str = Form(...)):
+    
+    openai.api_key = os.environ.get("OPENAI_KEY")
+    
+    filename = file.filename
+    os.makedirs("files", exist_ok=True)
+
+    save_path = os.path.join("files", filename)
+    with open(save_path, "wb") as f:
+        shutil.copyfileobj(file.file, f)
+
+    PDFReader = download_loader("PDFReader")
+    loader = PDFReader()
+
+    documents = loader.load_data(file=save_path)
+
+    index = VectorStoreIndex.from_documents(documents)
+    query_engine = index.as_query_engine()
+
+    response = query_engine.query(text)
+
+    return {"response": response}
+
+@app.post("/api/wordlookup")
+def wordlookup(content : dict):
+    
+    client = OpenAI(api_key=os.environ.get("OPENAI_KEY"))
+
+    text = content['text']
+
+    response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "You are a highly qualified professor and the best tutor in the world."},
+        {"role": "user", "content": "Generate a brief description of the word such that it will become easier for the student to understand it."},
+        {"role": "user", "content": "Word: "+ text},
+    ]
+    )
+
+    return {"response": response.choices[0].message.content}
+
+@app.post("/api/course_outline")
+def course_outline(content : dict):
+    
+    client = OpenAI(api_key=os.environ.get("OPENAI_KEY"))
+
+    text = content['text']
+    weeks = content['number']
+
+    response = client.chat.completions.create(
+    model="gpt-3.5-turbo-16k",
+    messages=[
+        {"role": "system", "content": "You are a highly qualified professor and the best tutor in the world."},
+        {"role": "user", "content": "Generate a course outline that will be helpful to a teacher for the following table of content that spans over " + weeks + " weeks."},
+        {"role": "user", "content": "Table of content: "+ text},
+    ]
+    )
+
+    return {"response": response.choices[0].message.content}
+
+@app.post("/api/chapter_objectives")
+def course_outline(content : dict):
+    
+    client = OpenAI(api_key=os.environ.get("OPENAI_KEY"))
+
+    text = content['text']
+
+    response = client.chat.completions.create(
+    model="gpt-3.5-turbo-16k",
+    messages=[
+        {"role": "system", "content": "You are a highly qualified professor and the best tutor in the world."},
+        {"role": "user", "content": "Generate a clear and concise chapter objectives that will be helpful to teacher and students for the following chapter and topics:"},
+        {"role": "user", "content": "Enter chapter name and subtopics: "+ text},
+    ]
+    )
+
+    return {"response": response.choices[0].message.content}
+
 @app.post("/api/mcq_generator")
 def mcq_generator(content : dict):
     
-    client = OpenAI(api_key="OPENAI_KEY")
+    client = OpenAI(api_key=os.environ.get("OPENAI_KEY"))
 
     text = content['text']
     number_mcq = content['number']
@@ -228,7 +314,7 @@ def mcq_generator(content : dict):
 @app.post("/api/saq_generator")
 def saq_generator(content : dict):
     
-    client = OpenAI(api_key="OPENAI_KEY")
+    client = OpenAI(api_key=os.environ.get("OPENAI_KEY"))
 
     text = content['text']
     number_saq = content['number']
@@ -249,7 +335,7 @@ def saq_generator(content : dict):
 @app.post("/api/casestudy_generator")
 def casestudy_generator(content : dict):
     
-    client = OpenAI(api_key="OPENAI_KEY")
+    client = OpenAI(api_key=os.environ.get("OPENAI_KEY"))
 
     text = content['text']
     number_questions = content['number']

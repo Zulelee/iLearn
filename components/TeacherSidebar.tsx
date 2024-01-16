@@ -41,34 +41,56 @@ const TeacherSidebar = (component: ParentComponentProps) => {
             <h1 className="font-bold text-2xl m-4">Hello Zulele!</h1>
 
             <li className="mt-4 text-lg">
-              <Link href={"/teacherMain/checkPlagiarism"}>
+              <Link
+                href={"/teacherMain/checkPlagiarism"}
+                className="hover:bg-black"
+              >
                 Plagiarism Checker
               </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/teacherMain/checkGrammar"}>Grammar Checker</Link>
+              <Link
+                href={"/teacherMain/checkGrammar"}
+                className="hover:bg-black"
+              >
+                Grammar Checker
+              </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/teacherMain/mcq"}>MCQ Generator</Link>
+              <Link href={"/teacherMain/mcq"} className="hover:bg-black">
+                MCQ Generator
+              </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/teacherMain/saq"}>SAQ Generator</Link>
+              <Link href={"/teacherMain/saq"} className="hover:bg-black">
+                SAQ Generator
+              </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/teacherMain/casestudy"}>Case Study Generator</Link>
+              <Link href={"/teacherMain/casestudy"} className="hover:bg-black">
+                Case Study Generator
+              </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/teacherMain/courseoutlineGenerator"}>
+              <Link
+                href={"/teacherMain/courseoutlineGenerator"}
+                className="hover:bg-black"
+              >
                 Course Outline Generator
               </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/teacherMain/chapterobjectivesGenerator"}>
+              <Link
+                href={"/teacherMain/chapterobjectivesGenerator"}
+                className="hover:bg-black"
+              >
                 Chapter Objectives Generator
               </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/"}>Sign Out</Link>
+              <Link href={"/"} className="hover:bg-black">
+                Sign Out
+              </Link>
             </li>
           </ul>
         </div>
