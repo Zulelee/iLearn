@@ -84,6 +84,7 @@ const CasestudyGeneration = () => {
               className="textarea textarea-bordered mt-4 w-full bg-black mb-4"
               onChange={handleInputChange}
               value={formData.text}
+              required
             ></textarea>
             <label htmlFor="number" className="font-bold">
               Enter number of questions for the case study - Min 1 and Max 5
@@ -98,6 +99,7 @@ const CasestudyGeneration = () => {
               className="input input-bordered w-full max-w-xs mt-4 bg-black mb-4"
               onChange={handleInputChange}
               value={formData.number}
+              required
             />
             <br />
             <label htmlFor="answer" className="font-bold">

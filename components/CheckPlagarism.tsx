@@ -127,6 +127,7 @@ const CheckPlagarism = () => {
                 name="text"
                 className="textarea textarea-bordered mt-4 w-full bg-black"
                 onChange={handleInputChange}
+                required
               ></textarea>
               <button className="btn btn-primary w-60 text-white mt-4">
                 {loadingState ? (
@@ -155,6 +156,7 @@ const CheckPlagarism = () => {
                 accept=".pdf"
                 className="file-input file-input-bordered w-full max-w-xs mt-4 bg-black"
                 onChange={handleInputChange}
+                required
               />
               <br />
               <button className="btn btn-primary w-60 text-white mt-4">

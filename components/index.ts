@@ -19,6 +19,7 @@ import CourseOutlineGenerator from "./CourseOutlineGenerator";
 import ChapterObjectivesGenerator from "./ChapterObjectivesGenerator";
 import Signup from "./Signup";
 import Login from "./Login";
+import WordLookup from "./WordLookup";
 
 export{
     Navbar, 
@@ -41,5 +42,6 @@ export{
     SearchTb,
     TeacherMain,
     TeacherSidebar,
-    Login
+    Login,
+    WordLookup
 }

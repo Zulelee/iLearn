@@ -4,28 +4,22 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import signup_image from "public/V-image.png";
-import { Navbar } from "@/components";
 import { useRouter } from "next/navigation";
 
-
-
 const login = () => {
-  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const router = useRouter(); 
-  const [errorMessage, setErrorMessage] = useState(""); // New state for error message  
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
-
+  const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState(""); // New state for error message
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // Create an object with form data
-    
+
     const formData = {
       email,
       password,
     };
     try {
-      
       const response = await fetch("http://localhost:3000/api/login", {
         method: "POST",
         headers: {
@@ -36,18 +30,18 @@ const login = () => {
 
       if (response.ok) {
         const responseData = await response.json();
-        console.log(responseData)  
+        console.log(responseData);
         if (responseData.status === "true") {
           // Check user role and redirect accordingly
           if (responseData.userRole === "Student") {
             router.push("/studentMain");
           } else if (responseData.userRole === "Teacher") {
             router.push("/teacherMain");
-          } 
+          }
         } else {
           setErrorMessage("Login failed. Please check your credentials.");
         }
-      } 
+      }
     } catch (error) {
       console.error("An error occurred while sending form data:", error);
     }
@@ -72,7 +66,7 @@ const login = () => {
               Login to access your account
             </label>
             <Image
-              src= {signup_image}
+              src={signup_image}
               width={650}
               height={650}
               alt="Picture of the author"
@@ -128,7 +122,9 @@ const login = () => {
                 Signup
               </Link>
             </div>
-            <div className="border-red-500 text-red-500 mt-4">{errorMessage}</div>
+            <div className="border-red-500 text-red-500 mt-4">
+              {errorMessage}
+            </div>
           </div>
         </div>
       </div>
@@ -140,4 +136,3 @@ export default login;
 function setErrorMessage(arg0: string) {
   throw new Error("Function not implemented.");
 }
-

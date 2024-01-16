@@ -125,6 +125,7 @@ const GrammarChecker = () => {
                 className="textarea textarea-bordered mt-4 w-full bg-black"
                 onChange={handleInputChange}
                 value={formData.text}
+                required
               ></textarea>
               <button className="btn btn-primary w-40 text-white mt-4">
                 {loadingState ? (
@@ -153,6 +154,7 @@ const GrammarChecker = () => {
                 accept=".pdf"
                 className="file-input file-input-bordered w-full max-w-xs mt-4 bg-black"
                 onChange={handleInputChange}
+                required
               />
               <br />
               <button className="btn btn-primary w-40 text-white mt-4">

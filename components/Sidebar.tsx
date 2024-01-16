@@ -41,27 +41,50 @@ const Sidebar = (component: ParentComponentProps) => {
             <h1 className="font-bold text-2xl m-4">Hello Zulele!</h1>
 
             <li className="mt-4 text-lg">
-              <Link href={"/studentMain/checkPlagarism"}>
+              <Link
+                href={"/studentMain/checkPlagarism"}
+                className="hover:bg-black"
+              >
                 Plagiarism Checker
               </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/studentMain/checkGrammar"}>Grammar Checker</Link>
+              <Link
+                href={"/studentMain/checkGrammar"}
+                className="hover:bg-black"
+              >
+                Grammar Checker
+              </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/studentMain/mcq"}>MCQ Generator</Link>
+              <Link href={"/studentMain/mcq"} className="hover:bg-black">
+                MCQ Generator
+              </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/studentMain/saq"}>SAQ Generator</Link>
+              <Link href={"/studentMain/saq"} className="hover:bg-black">
+                SAQ Generator
+              </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/studentMain/casestudy"}>Case Study Generator</Link>
+              <Link href={"/studentMain/casestudy"} className="hover:bg-black">
+                Case Study Generator
+              </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/studentMain/searchtb"}>Search Textbook</Link>
+              <Link href={"/studentMain/wordlookup"} className="hover:bg-black">
+                Word Lookup
+              </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/"}>Sign Out</Link>
+              <Link href={"/studentMain/searchtb"} className="hover:bg-black">
+                Search Textbook
+              </Link>
+            </li>
+            <li className="mt-4 text-lg">
+              <Link href={"/"} className="hover:bg-black">
+                Sign Out
+              </Link>
             </li>
           </ul>
         </div>
