@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { ReactNode } from "react";
+import GlobalConifg from "@/app/app.config.js";
 
 interface ParentComponentProps {
   childComponent: ReactNode;
@@ -38,7 +39,9 @@ const Sidebar = (component: ParentComponentProps) => {
           ></label>
           <ul className="menu p-4 w-80 min-h-full bg-purple text-base-content">
             {/* Sidebar content here */}
-            <h1 className="font-bold text-2xl m-4">Hello Hamza</h1>
+            <h1 className="font-bold text-2xl m-4">
+              Hello {GlobalConifg.username}!
+            </h1>
 
             <li className="mt-4 text-lg">
               <Link
@@ -62,23 +65,13 @@ const Sidebar = (component: ParentComponentProps) => {
               </Link>
             </li>
             <li className="mt-4 text-lg">
-              <Link href={"/studentMain/saq"} className="hover:bg-black">
-                SAQ Generator
-              </Link>
-            </li>
-            <li className="mt-4 text-lg">
-              <Link href={"/studentMain/casestudy"} className="hover:bg-black">
-                Case Study Generator
-              </Link>
-            </li>
-            <li className="mt-4 text-lg">
               <Link href={"/studentMain/wordlookup"} className="hover:bg-black">
                 Word Lookup
               </Link>
             </li>
             <li className="mt-4 text-lg">
               <Link href={"/studentMain/searchtb"} className="hover:bg-black">
-                Search Textbook
+                BookQuest
               </Link>
             </li>
             <li className="mt-4 text-lg">

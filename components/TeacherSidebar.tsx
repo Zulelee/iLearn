@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { ReactNode } from "react";
+import GlobalConifg from "@/app/app.config.js";
 
 interface ParentComponentProps {
   childComponent: ReactNode;
@@ -38,7 +39,9 @@ const TeacherSidebar = (component: ParentComponentProps) => {
           ></label>
           <ul className="menu p-4 w-80 min-h-full bg-purple text-base-content">
             {/* Sidebar content here */}
-            <h1 className="font-bold text-2xl m-4">Hello Teacher!</h1>
+            <h1 className="font-bold text-2xl m-4">
+              Hello {GlobalConifg.username}!
+            </h1>
 
             <li className="mt-4 text-lg">
               <Link

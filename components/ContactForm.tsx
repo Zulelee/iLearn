@@ -25,7 +25,7 @@ const ContactForm = () => {
       setLoadingState(true); // Set loading state to true while waiting for API response
 
       const response = await fetch(
-        "https://formsubmit.co/theteamilearn@gmail.com",
+        "https://formsubmit.co/cc1163030be7fa0f68d22835a0ebb62f",
         {
           method: "POST",
           headers: {
@@ -79,6 +79,7 @@ const ContactForm = () => {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
+                    required
                   />
                   <input
                     type="text"
@@ -87,6 +88,7 @@ const ContactForm = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    required
                   />
                   <textarea
                     className="textarea w-full my-3 bg-secondary"
@@ -94,6 +96,7 @@ const ContactForm = () => {
                     name="question"
                     value={formData.question}
                     onChange={handleInputChange}
+                    required
                   ></textarea>
                   <button
                     className="btn btn-primary my-3 text-white font-bold"

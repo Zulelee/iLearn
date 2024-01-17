@@ -1,5 +1,6 @@
 import React from "react";
 import { Sidebar, StudentMain } from "@/components";
+import GlobalConifg from "../app.config.js";
 
 const page = async () => {
   return (

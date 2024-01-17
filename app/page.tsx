@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Hero, Benefits, Step, Footer } from "@/components";
+import GlobalConifg from "./app.config.js";
 
 const page = () => {
   return (
