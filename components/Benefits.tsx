@@ -52,12 +52,7 @@ const Benefits = () => {
           <FloatingDiv
             flipfunction={handleFlip1}
             title="Enhanced Learning Resources"
-            paragraph="iLearn provides students with a vast library of question
-                      banks, study guides, and practice problems covering a wide
-                      range of subjects. This extensive collection of resources
-                      enables students to practice and develop their skills
-                      independently, making it easier to master new concepts and
-                      improve their academic performance."
+            paragraph="iLearn's Enhanced Learning Resources provide users with dynamic tools like MCQ generation for interactive quizzes and word lookup for concept clarity, fostering an enriched learning experience. Explore a diverse range of features designed to enhance comprehension and engagement."
             isAnimating={isAnimating1}
             isFlipped={isFlipped1}
             setIsAnimating={setIsAnimating1}
@@ -65,13 +60,8 @@ const Benefits = () => {
           ></FloatingDiv>
           <FloatingDiv
             flipfunction={handleFlip2}
-            title="Personalized Homework Help"
-            paragraph="iLearn offers personalized homework help through its
-            advanced AI Chatbot, available 24/7. This feature ensures
-            that students can receive guidance and support whenever
-            they need it, enhancing their understanding of course
-            materials and providing a valuable resource for answering
-            questions and solving problems."
+            title="BookQuest - Intelligent AI"
+            paragraph="With iLearn's BookQuest - Intelligent AI, users can seamlessly upload books and engage in a transformative learning experience. This innovative feature enables users to pose questions directly to the uploaded text, fostering a personalized and interactive approach to understanding and comprehending the material."
             isAnimating={isAnimating2}
             isFlipped={isFlipped2}
             setIsAnimating={setIsAnimating2}
@@ -81,7 +71,7 @@ const Benefits = () => {
             flipfunction={handleFlip3}
             title="Support for Teachers"
             paragraph="iLearn assists teachers by generating automated course
-            outlines, roadmaps, and course objectives. This feature
+            outlines, chapter objectives, MCQ generation, Case study genetation and much more. This feature
             streamlines the teaching process, saves time for
             educators, and ensures that students receive a structured
             and comprehensive education that covers all necessary

@@ -91,7 +91,10 @@ def login(user_data : UserLogin):
 
     if user and user["password"] == user_data.password:
         user_role = user.get("profession")
-        return {"status": "true", "userRole": user_role}
+        global current_username
+        current_username = user.get("username") 
+        current_username = current_username.capitalize()
+        return {"status": "true", "userRole": user_role, "username": current_username}
     else:
         return {"status": "Login failed"}
         

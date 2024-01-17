@@ -11,7 +11,7 @@ const Step = () => {
             <li className="step step-primary">User Registration</li>
             <li className="step step-primary">Explore the Content Library</li>
             <li className="step step-primary">Self-Paced Learning</li>
-            <li className="step">Homework Assistance</li>
+            <li className="step">BookQuest</li>
             <li className="step">Adaptive Learning</li>
             <li className="step">Achieving Academic Success</li>
             <li className="step">Continuous Improvement</li>

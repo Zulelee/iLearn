@@ -40,16 +40,15 @@ const SearchTb = () => {
     <>
       <div className="p-10 overflow-auto">
         <h1 className="text-center text-3xl lg:text-4xl font-extrabold">
-          Search Textbook
+          BookQuest
         </h1>
         <div className="divider divider-primary"></div>
         <p className="px-10 pt-14 text-justify">
-          Welcome to iLearn's Search Textbook feature - effortlessly upload your
-          PDF file, ask a question, and watch as iLearn generates precise
-          answers. Perfect for students and educators, this tool streamlines
-          information retrieval within study materials, making learning more
-          efficient and effective. Access knowledge at your fingertips with
-          iLearn's Search Textbook feature.
+          Introducing BookQuest - Embark on a Journey of Knowledge. It's like a
+          cool journey through your textbooks. No more boring searches—here,
+          finding answers is super fun! Dive into this awesome world where
+          learning is not just easy but also really exciting. Make your learning
+          adventure awesome with BookQuest on iLearn today!
         </p>
         <div className="px-10 pt-14">
           <form

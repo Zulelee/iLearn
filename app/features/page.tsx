@@ -26,7 +26,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="container text-center my-16 p-5">
+      <div className="container text-center my-16 p-5 mx-auto">
         <Fade>
           <div className="m-auto my-20">
             <Fade>
@@ -78,12 +78,12 @@ const page = () => {
               </p>
               <div className="flex justify-center flex-wrap ">
                 <FeatureBox
-                  title="Title/Word Lookup"
+                  title="Word Lookup"
                   paragraph="Elevate your knowledge instantly. Utilize the title/word lookup feature to gain comprehensive details on any topic, ensuring a robust understanding of the subject matter."
                   svg="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
                 ></FeatureBox>
                 <FeatureBox
-                  title="Question Answering"
+                  title="BookQuest"
                   paragraph="Foster dynamic learning. Pose questions and receive accurate, insightful answers, creating an interactive learning environment tailored to your inquiries."
                   svg="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
                 ></FeatureBox>
@@ -111,8 +111,8 @@ const page = () => {
                   svg="M4.5 12.75l6 6 9-13.5"
                 ></FeatureBox>
                 <FeatureBox
-                  title="Plagiarism Checker and Remover"
-                  paragraph="Uphold content authenticity. Check your work for plagiarism and, if necessary, efficiently remove any instances, maintaining the integrity of your educational submissions."
+                  title="Plagiarism Checker"
+                  paragraph="Uphold content authenticity. Check your work for plagiarism and maintain the integrity of your educational submissions."
                   svg="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"
                 ></FeatureBox>
               </div>
@@ -139,8 +139,8 @@ const page = () => {
                   svg="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 ></FeatureBox>
                 <FeatureBox
-                  title="Course Roadmap and Objectives Generation"
-                  paragraph="Navigate your educational journey strategically. Generate a roadmap and gain clear objectives for your courses, ensuring a guided and purposeful approach to your learning path"
+                  title="Chapter Objectives Generation"
+                  paragraph="Navigate your educational journey strategically. Generate clear objectives for your courses, ensuring a guided and purposeful approach to your learning path"
                   svg="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
                 ></FeatureBox>
               </div>
