@@ -26,7 +26,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="container text-center my-16 p-5">
+      <div className="container text-center my-16 p-5 mx-auto">
         <Fade>
           <div className="m-auto my-20">
             <Fade>

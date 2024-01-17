@@ -91,7 +91,8 @@ def login(user_data : UserLogin):
 
     if user and user["password"] == user_data.password:
         user_role = user.get("profession")
-        return {"status": "true", "userRole": user_role}
+        user_name = user.get("username")
+        return {"status": "true", "userRole": user_role, "username": user_name}
     else:
         return {"status": "Login failed"}
         

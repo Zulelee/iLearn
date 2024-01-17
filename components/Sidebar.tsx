@@ -38,7 +38,7 @@ const Sidebar = (component: ParentComponentProps) => {
           ></label>
           <ul className="menu p-4 w-80 min-h-full bg-purple text-base-content">
             {/* Sidebar content here */}
-            <h1 className="font-bold text-2xl m-4">Hello Zulele!</h1>
+            <h1 className="font-bold text-2xl m-4">Hello Hamza</h1>
 
             <li className="mt-4 text-lg">
               <Link

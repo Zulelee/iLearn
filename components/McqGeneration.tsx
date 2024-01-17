@@ -24,7 +24,7 @@ const McqGeneration = () => {
     try {
       setLoadingState(true); // Set loading state to true while waiting for API response
 
-      const response = await fetch("http://localhost:3000/api/saq_generator", {
+      const response = await fetch("http://localhost:3000/api/mcq_generator", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
