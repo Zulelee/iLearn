@@ -70,16 +70,20 @@ def preprocess_text(input_text):
 @app.post("/api/signup")
 def signup(user_data : UserSignup):
 
-    # Insert rows/documents into collection
-    mydoc = {
-            "username": user_data.username,
-            "email" : user_data.email,
-            "password" : user_data.password,
-            "profession" : user_data.profession,
-            }
-    User_collection.insert_one(mydoc)
+    existing_user = User_collection.find_one({"$or": [{"username": user_data.username}, {"email": user_data.email}]})
+    if existing_user:
+        return {"status": "error", "message": "Username or email already exists"}
+    else:
+        # Insert rows/documents into collection
+        mydoc = {
+                "username": user_data.username,
+                "email" : user_data.email,
+                "password" : user_data.password,
+                "profession" : user_data.profession,
+                }
+        User_collection.insert_one(mydoc)
 
-    return {"status": "signup successful"}
+        return {"message": "signup successful"}
 
 @app.post("/api/login")
 def login(user_data : UserLogin):

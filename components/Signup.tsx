@@ -27,6 +27,18 @@ const Signup = () => {
       setErrorMessage("Please select a valid profession (Student or Teacher).");
       return; // Stop execution if the profession is not valid
     }
+    if (password.length <= 5) {
+      setErrorMessage("Password should be greater than 5 characters.");
+      return;
+    }
+
+    // Check for at least one capital letter and one digit
+    const capitalLetterRegex = /[A-Z]/;
+    const digitRegex = /\d/;
+    if (!capitalLetterRegex.test(password) || !digitRegex.test(password)) {
+      setErrorMessage("Password must one capital letter and one digit.");
+      return;
+    }
     // Create an object with form data
     const formData = {
       username,
@@ -43,9 +55,9 @@ const Signup = () => {
         },
         body: JSON.stringify(formData),
       });
-
-      if (response.ok) {
-        setErrorMessage("Signup successfully");
+      const responseData = await response.json();
+      if (responseData.message) {
+        setErrorMessage(responseData.message);
       }
     } catch (error) {
       console.error("An error occurred while sending form data:", error);
