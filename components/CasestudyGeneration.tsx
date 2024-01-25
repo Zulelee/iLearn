@@ -9,7 +9,7 @@ const CasestudyGeneration = () => {
   });
 
   const [loadingState, setLoadingState] = useState(false);
-  const [CaseStudy, setCaseStudy] = useState();
+  const [CaseStudy, setCaseStudy] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
