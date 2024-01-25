@@ -61,13 +61,13 @@ const CasestudyGeneration = () => {
         </h1>
         <div className="divider divider-primary"></div>
         <p className="px-10 pt-14 text-justify">
-          Welcome to iLearn's Case Study Generator – your go-to tool for
+          Welcome to iLearn&apos;s Case Study Generator – your go-to tool for
           crafting custom case studies effortlessly. Input your topic, specify
           the desired number of questions, and watch as iLearn generates
           engaging case studies instantly. Perfect for educators seeking diverse
           assessments or students aiming to enhance critical thinking. Elevate
-          your learning experience with iLearn's efficient and personalized Case
-          Study Generator.
+          your learning experience with iLearn&apos;s efficient and personalized
+          Case Study Generator.
         </p>
         <div className="px-10 pt-14">
           <form

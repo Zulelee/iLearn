@@ -58,12 +58,13 @@ const SaqGeneration = () => {
         </h1>
         <div className="divider divider-primary"></div>
         <p className="px-10 pt-14 text-justify">
-          Welcome to iLearn's Short Answer Questions Generator - your effortless
-          solution for crafting targeted short-answer questions. Input your
-          topic or paragraph, specify the number of questions, and watch as
-          iLearn generates precise SAQs instantly. Ideal for educators designing
-          assessments or students reinforcing their understanding. Enhance your
-          learning with iLearn's efficient and personalized SAQ Generator.
+          Welcome to iLearn&apos;s Short Answer Questions Generator - your
+          effortless solution for crafting targeted short-answer questions.
+          Input your topic or paragraph, specify the number of questions, and
+          watch as iLearn generates precise SAQs instantly. Ideal for educators
+          designing assessments or students reinforcing their understanding.
+          Enhance your learning with iLearn&apos;s efficient and personalized
+          SAQ Generator.
         </p>
         <div className="px-10 pt-14">
           <form

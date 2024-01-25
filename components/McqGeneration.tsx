@@ -64,8 +64,8 @@ const McqGeneration = () => {
           paragraph, specify the number of questions you need, and watch as
           iLearn generates tailored MCQs instantly. Perfect for educators
           designing assessments or students reinforcing their knowledge. Elevate
-          your learning experience with iLearn's efficient and personalized MCQ
-          Generator.
+          your learning experience with iLearn&apos;s efficient and personalized
+          MCQ Generator.
         </p>
         <div className="px-10 pt-14">
           <form

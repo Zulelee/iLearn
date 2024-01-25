@@ -12,7 +12,7 @@ const Hero = () => {
           <div className="max-w-lg">
             <h1 className="text-3xl lg:text-4xl font-extrabold">
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-lightblue to-primary">
-                Hello! We're {""}
+                Hello! We&apos;re {""}
               </span>
               <br />
               <TypeAnimation

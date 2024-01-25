@@ -88,14 +88,15 @@ const CheckPlagarism = () => {
         <p className="px-10 pt-14 text-justify">
           Welcome to the cutting-edge Plagiarism Checker feature in iLearn –
           your guardian against academic integrity breaches. As part of our
-          commitment to fostering a culture of originality, iLearn's Plagiarism
-          Checker ensures the authenticity of your work by meticulously scanning
-          and analyzing content against an extensive database. Whether you're a
-          student striving for academic excellence or an educator overseeing
-          submissions, our advanced plagiarism detection technology provides a
-          comprehensive solution. Safeguard the credibility of your work and
-          uphold the principles of academic honesty with iLearn's Plagiarism
-          Checker – where originality meets innovation.
+          commitment to fostering a culture of originality, iLearn&apos;s
+          Plagiarism Checker ensures the authenticity of your work by
+          meticulously scanning and analyzing content against an extensive
+          database. Whether you&apos;re a student striving for academic
+          excellence or an educator overseeing submissions, our advanced
+          plagiarism detection technology provides a comprehensive solution.
+          Safeguard the credibility of your work and uphold the principles of
+          academic honesty with iLearn&apos;s Plagiarism Checker – where
+          originality meets innovation.
         </p>
         <div className="px-10 pt-14">
           <h3 className="font-bold text-lg">Choose Input Type:</h3>

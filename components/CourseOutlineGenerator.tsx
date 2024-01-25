@@ -57,14 +57,14 @@ const CourseOutlineGenerator = () => {
         </h1>
         <div className="divider divider-primary"></div>
         <p className="px-10 pt-14 text-justify">
-          Welcome to iLearn's Course Outline Generator - effortlessly convert
-          textbook table of contents into a well-structured course outline.
-          Simplify your curriculum planning, ensuring a seamless and organized
-          learning journey. Ideal for educators and curriculum developers, this
-          tool optimizes efficiency, saving you valuable time in course design.
-          Elevate your planning experience with iLearn's Course Outline
-          Generator – where creating a roadmap for impactful learning has never
-          been easier.
+          Welcome to iLearn&apos;s Course Outline Generator - effortlessly
+          convert textbook table of contents into a well-structured course
+          outline. Simplify your curriculum planning, ensuring a seamless and
+          organized learning journey. Ideal for educators and curriculum
+          developers, this tool optimizes efficiency, saving you valuable time
+          in course design. Elevate your planning experience with iLearn&apos;s
+          Course Outline Generator – where creating a roadmap for impactful
+          learning has never been easier.
         </p>
         <div className="px-10 pt-14">
           <form name="courseoutline" method="POST" onSubmit={handleFormSubmit}>
@@ -79,13 +79,15 @@ const CourseOutlineGenerator = () => {
               onChange={handleInputChange}
             ></textarea>
             <label htmlFor="number" className="font-bold">
-              Enter number of weeks
+              Enter number of weeks - Min 1 and Max 10
             </label>
             <br />
             <input
               type="number"
               placeholder="Type here"
               name="number"
+              min={1}
+              max={10}
               className="input input-bordered w-full max-w-xs mt-4 bg-black mb-4"
               required
               onChange={handleInputChange}

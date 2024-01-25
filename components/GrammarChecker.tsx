@@ -88,15 +88,15 @@ const GrammarChecker = () => {
         <p className="px-10 pt-14 text-justify">
           Welcome to the Grammar Checker feature in iLearn – your key to
           refining and perfecting written communication. In the pursuit of
-          academic excellence, iLearn's Grammar Checker serves as your vigilant
-          companion, ensuring that your content adheres to grammatical precision
-          and linguistic clarity. Whether you are a student crafting assignments
-          or an educator reviewing submissions, our advanced grammar validation
-          technology meticulously analyzes your text, offering suggestions for
-          improvement. Elevate the quality of your writing, foster effective
-          communication, and embrace the confidence that comes with impeccable
-          grammar. iLearn's Grammar Checker is where linguistic finesse meets
-          educational innovation.
+          academic excellence, iLearn&apos;s Grammar Checker serves as your
+          vigilant companion, ensuring that your content adheres to grammatical
+          precision and linguistic clarity. Whether you are a student crafting
+          assignments or an educator reviewing submissions, our advanced grammar
+          validation technology meticulously analyzes your text, offering
+          suggestions for improvement. Elevate the quality of your writing,
+          foster effective communication, and embrace the confidence that comes
+          with impeccable grammar. iLearn&apos;s Grammar Checker is where
+          linguistic finesse meets educational innovation.
         </p>
         <div className="px-10 pt-14">
           <h3 className="font-bold text-lg">Choose Input Type:</h3>

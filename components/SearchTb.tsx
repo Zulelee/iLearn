@@ -44,11 +44,11 @@ const SearchTb = () => {
         </h1>
         <div className="divider divider-primary"></div>
         <p className="px-10 pt-14 text-justify">
-          Introducing BookQuest - Embark on a Journey of Knowledge. It's like a
-          cool journey through your textbooks. No more boring searches—here,
-          finding answers is super fun! Dive into this awesome world where
-          learning is not just easy but also really exciting. Make your learning
-          adventure awesome with BookQuest on iLearn today!
+          Introducing BookQuest - Embark on a Journey of Knowledge. It&apos;s
+          like a cool journey through your textbooks. No more boring
+          searches—here, finding answers is super fun! Dive into this awesome
+          world where learning is not just easy but also really exciting. Make
+          your learning adventure awesome with BookQuest on iLearn today!
         </p>
         <div className="px-10 pt-14">
           <form

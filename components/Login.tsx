@@ -7,15 +7,15 @@ import signup_image from "public/V-image.png";
 import { useRouter } from "next/navigation";
 import GlobalConifg from "@/app/app.config.js";
 
-const login = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState(""); // New state for error message
+
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // Create an object with form data
-
     const formData = {
       email,
       password,
@@ -48,6 +48,7 @@ const login = () => {
       console.error("An error occurred while sending form data:", error);
     }
   };
+
   return (
     <>
       <div className="flex flex-row-reverse min-h-screen bg-secondary">
@@ -111,7 +112,7 @@ const login = () => {
             </form>
             <div className="pt-10">
               <Link rel="stylesheet" href="" className="text-xs text-accent">
-                Don't have and account?
+                Don&apos;t have and account?
               </Link>
               <Link
                 rel="stylesheet"
@@ -131,7 +132,7 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
 function setErrorMessage(arg0: string) {
   throw new Error("Function not implemented.");
 }

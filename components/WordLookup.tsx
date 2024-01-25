@@ -57,11 +57,11 @@ const WordLookup = () => {
         </h1>
         <div className="divider divider-primary"></div>
         <p className="px-10 pt-14 text-justify">
-          Welcome to iLearn's Word Lookup - effortlessly discover the meaning
-          and usage of any word. Perfect for students and educators, this tool
-          provides instant insights, enhancing your vocabulary in just a click.
-          Elevate your language learning with iLearn's Word Lookup – where
-          understanding words is made simple and efficient.
+          Welcome to iLearn&apos;s Word Lookup - effortlessly discover the
+          meaning and usage of any word. Perfect for students and educators,
+          this tool provides instant insights, enhancing your vocabulary in just
+          a click. Elevate your language learning with iLearn&apos;s Word Lookup
+          – where understanding words is made simple and efficient.
         </p>
         <div className="px-10 pt-14">
           <form name="wordlookup" method="POST" onSubmit={handleFormSubmit}>

@@ -24,12 +24,12 @@ const StudentMain = () => {
           triumph.
         </p>
         <p className="px-10 pt-5 text-justify">
-          Joining iLearn is not just a commitment to learning; it's a pledge to
-          elevate your educational experience. With a user-friendly interface
-          and powerful features at your fingertips, you can seamlessly access
-          advanced features such as MCQ, case study, and short answer question
-          generation, Title/Word Lookup for swift references, and Content
-          Grammar Validation. Your academic success story begins here!
+          Joining iLearn is not just a commitment to learning; it&apos;s a
+          pledge to elevate your educational experience. With a user-friendly
+          interface and powerful features at your fingertips, you can seamlessly
+          access advanced features such as MCQ, case study, and short answer
+          question generation, Title/Word Lookup for swift references, and
+          Content Grammar Validation. Your academic success story begins here!
         </p>
       </div>
     </>
