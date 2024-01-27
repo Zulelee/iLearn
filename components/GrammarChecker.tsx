@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const GrammarChecker = () => {
   const [contentType, setContentType] = useState<string>();
   const [loadingState, setLoadingState] = useState(false);
-  const [GrammarReport, setGrammarReport] = useState();
+  const [GrammarReport, setGrammarReport] = useState({ response: "" });
   const [formData, setFormData] = useState({
     text: "",
     file: "",

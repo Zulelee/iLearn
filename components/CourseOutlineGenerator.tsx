@@ -8,7 +8,7 @@ const CourseOutlineGenerator = () => {
   });
 
   const [loadingState, setLoadingState] = useState(false);
-  const [Outline, setOutline] = useState();
+  const [Outline, setOutline] = useState({ response: "" });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

@@ -9,7 +9,7 @@ const McqGeneration = () => {
   });
 
   const [loadingState, setLoadingState] = useState(false);
-  const [MCQList, setMCQList] = useState();
+  const [MCQList, setMCQList] = useState({ response: "" });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

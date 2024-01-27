@@ -3,8 +3,8 @@ import React, { useState } from "react";
 
 const SearchTb = () => {
   const [loadingState, setLoadingState] = useState(false);
-  const [Answer, setAnswer] = useState();
-  const [Question, setQuestion] = useState();
+  const [Answer, setAnswer] = useState({ response: { response: "" } });
+  const [Question, setQuestion] = useState("");
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

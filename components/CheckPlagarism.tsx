@@ -4,7 +4,10 @@ import React, { useState } from "react";
 const CheckPlagarism = () => {
   const [contentType, setContentType] = useState<string>();
   const [loadingState, setLoadingState] = useState(false);
-  const [PlagiarismReport, setPlagiarismReport] = useState();
+  const [PlagiarismReport, setPlagiarismReport] = useState({
+    percentPlagiarism: "",
+    citations: [{ title: "", url: "" }],
+  });
   const [formData, setFormData] = useState({
     text: "",
     file: "",
@@ -178,7 +181,7 @@ const CheckPlagarism = () => {
             <div className="flex justify-around mt-10">
               <div
                 className="radial-progress bg-primary text-primary-content border-4 border-primary w-32 h-32"
-                style={{ "--value": PlagiarismReport.percentPlagiarism }}
+                style={{ "--value": PlagiarismReport.percentPlagiarism } as any}
                 role="progressbar"
               >
                 {PlagiarismReport.percentPlagiarism}%

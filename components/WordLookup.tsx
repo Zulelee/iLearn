@@ -9,7 +9,7 @@ const WordLookup = () => {
   const [Word, setWord] = useState("");
 
   const [loadingState, setLoadingState] = useState(false);
-  const [WordDescription, setWordDescription] = useState();
+  const [WordDescription, setWordDescription] = useState({ response: "" });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

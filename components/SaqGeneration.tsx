@@ -9,7 +9,7 @@ const SaqGeneration = () => {
   });
 
   const [loadingState, setLoadingState] = useState(false);
-  const [SAQList, setSAQList] = useState();
+  const [SAQList, setSAQList] = useState({ response: "" });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

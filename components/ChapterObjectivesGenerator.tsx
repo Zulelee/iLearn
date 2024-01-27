@@ -7,7 +7,7 @@ const ChapterObjectivesGenerator = () => {
   });
 
   const [loadingState, setLoadingState] = useState(false);
-  const [Objectives, setObjectives] = useState();
+  const [Objectives, setObjectives] = useState({ response: "" });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
